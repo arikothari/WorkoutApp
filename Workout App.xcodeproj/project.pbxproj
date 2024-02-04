@@ -18,6 +18,8 @@
 		108E12952A62163600A19761 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E12942A62163600A19761 /* Options.swift */; };
 		108E12972A66062C00A19761 /* AddingWorkoutOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E12962A66062C00A19761 /* AddingWorkoutOptions.swift */; };
 		108E12992A66123A00A19761 /* Workout_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E12982A66123A00A19761 /* Workout_App.swift */; };
+		108E12D82A6E04BD00A19761 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E12D72A6E04BD00A19761 /* HealthKitManager.swift */; };
+		108E12DA2A6E090A00A19761 /* HealthKitUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E12D92A6E090A00A19761 /* HealthKitUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		108E12942A62163600A19761 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		108E12962A66062C00A19761 /* AddingWorkoutOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingWorkoutOptions.swift; sourceTree = "<group>"; };
 		108E12982A66123A00A19761 /* Workout_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout_App.swift; sourceTree = "<group>"; };
+		108E12D62A6DFE7400A19761 /* Workout App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Workout App.entitlements"; sourceTree = "<group>"; };
+		108E12D72A6E04BD00A19761 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		108E12D92A6E090A00A19761 /* HealthKitUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +107,11 @@
 		108E12652A57AE9300A19761 /* Workout App */ = {
 			isa = PBXGroup;
 			children = (
+				108E12D62A6DFE7400A19761 /* Workout App.entitlements */,
 				108E12982A66123A00A19761 /* Workout_App.swift */,
 				108E12682A57AE9300A19761 /* ContentView.swift */,
+				108E12D72A6E04BD00A19761 /* HealthKitManager.swift */,
+				108E12D92A6E090A00A19761 /* HealthKitUI.swift */,
 				108E12902A58EA5B00A19761 /* AddingWorkout.swift */,
 				108E12962A66062C00A19761 /* AddingWorkoutOptions.swift */,
 				108E12942A62163600A19761 /* Options.swift */,
@@ -269,11 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108E12DA2A6E090A00A19761 /* HealthKitUI.swift in Sources */,
 				108E12692A57AE9300A19761 /* ContentView.swift in Sources */,
 				108E12912A58EA5B00A19761 /* AddingWorkout.swift in Sources */,
 				108E12972A66062C00A19761 /* AddingWorkoutOptions.swift in Sources */,
 				108E12952A62163600A19761 /* Options.swift in Sources */,
 				108E12992A66123A00A19761 /* Workout_App.swift in Sources */,
+				108E12D82A6E04BD00A19761 /* HealthKitManager.swift in Sources */,
 				108E12932A58EF5D00A19761 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,12 +440,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Workout App/Workout App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Workout App/Preview Content\"";
 				DEVELOPMENT_TEAM = G95LN89CB9;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Workout\\ AppUITests",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = NSHealthShareUsageDescription;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = NSHealthUpdateUsageDescription;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,12 +476,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Workout App/Workout App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Workout App/Preview Content\"";
 				DEVELOPMENT_TEAM = G95LN89CB9;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Workout\\ AppUITests",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = NSHealthShareUsageDescription;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = NSHealthUpdateUsageDescription;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

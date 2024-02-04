@@ -9,12 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataModel: DataModel
+    @Environment(\.colorScheme) var colorScheme
+
+
     
     var body: some View {
         TabView {
             NavigationStack {
                 Text("Today is " + day())
                     .font(.subheadline)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    .background(colorScheme == .dark ? Color.black : Color.white)
+
                 
                 Spacer()
                 
@@ -47,6 +53,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Options", systemImage: "list.dash")
                 }
+            HealthKitUI().environmentObject(HealthKitViewModel())
+                .tabItem {
+                    Label("Health", systemImage: "heart.text.square.fill")
+                }
         }
         
 
@@ -66,6 +76,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(DataModel())
+            .environmentObject(HealthKitViewModel())
     }
 }
 
